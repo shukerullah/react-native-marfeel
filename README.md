@@ -8,6 +8,27 @@ React Native wrapper for Marfeel SDK - Analytics and tracking solution for mobil
 npm install react-native-marfeel
 ```
 
+### Android Setup
+
+Add the Marfeel Maven repository to your `android/build.gradle`:
+
+```gradle
+allprojects {
+    repositories {
+        // ... other repositories
+        maven {
+            url "https://repositories.mrf.io/nexus/repository/mvn-marfeel-public/"
+        }
+    }
+}
+```
+
+### iOS Setup
+
+```sh
+cd ios && pod install
+```
+
 ## Usage
 
 ```js
