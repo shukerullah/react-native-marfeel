@@ -5,12 +5,12 @@ import com.facebook.react.bridge.Promise
 import com.facebook.react.bridge.ReadableArray
 import com.facebook.react.bridge.ReadableMap
 import com.facebook.react.module.annotations.ReactModule
-import com.marfeel.compass.CompassTracking
-import com.marfeel.compass.multimedia.MultimediaTracking
-import com.marfeel.compass.multimedia.MultimediaMetadata
-import com.marfeel.compass.multimedia.Type as MultimediaType
-import com.marfeel.compass.multimedia.Event as MultimediaEvent
-import com.marfeel.compass.UserType
+import com.marfeel.compass.tracker.CompassTracking
+import com.marfeel.compass.tracker.multimedia.MultimediaTracking
+import com.marfeel.compass.tracker.multimedia.MultimediaMetadata
+import com.marfeel.compass.tracker.multimedia.Type as MultimediaType
+import com.marfeel.compass.tracker.multimedia.Event as MultimediaEvent
+import com.marfeel.compass.tracker.UserType
 
 @ReactModule(name = MarfeelModule.NAME)
 class MarfeelModule(reactContext: ReactApplicationContext) :
