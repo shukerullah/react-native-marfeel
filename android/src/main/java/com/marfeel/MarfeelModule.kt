@@ -7,10 +7,10 @@ import com.facebook.react.bridge.ReadableMap
 import com.facebook.react.module.annotations.ReactModule
 import com.marfeel.compass.tracker.CompassTracking
 import com.marfeel.compass.tracker.multimedia.MultimediaTracking
-import com.marfeel.compass.tracker.multimedia.MultimediaMetadata
-import com.marfeel.compass.tracker.multimedia.Type as MultimediaType
-import com.marfeel.compass.tracker.multimedia.Event as MultimediaEvent
-import com.marfeel.compass.tracker.UserType
+import com.marfeel.compass.core.model.compass.UserType
+import com.marfeel.compass.core.model.multimedia.MultimediaMetadata
+import com.marfeel.compass.core.model.multimedia.Type as MultimediaType
+import com.marfeel.compass.core.model.multimedia.Event as MultimediaEvent
 
 @ReactModule(name = MarfeelModule.NAME)
 class MarfeelModule(reactContext: ReactApplicationContext) :
@@ -92,7 +92,7 @@ class MarfeelModule(reactContext: ReactApplicationContext) :
 
   // Consent
   override fun setConsent(hasConsent: Boolean) {
-    tracker?.setConsent(hasConsent)
+    tracker?.setUserConsent(hasConsent)
   }
 
   // Custom Dimensions - Page Vars
