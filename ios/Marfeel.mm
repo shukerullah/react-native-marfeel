@@ -1,11 +1,8 @@
 #import "Marfeel.h"
 
 @implementation Marfeel
-- (NSNumber *)multiply:(double)a b:(double)b {
-    NSNumber *result = @(a * b);
 
-    return result;
-}
+// Marfeel SDK methods will be implemented here
 
 - (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:
     (const facebook::react::ObjCTurboModule::InitParams &)params

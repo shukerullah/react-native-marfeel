@@ -67,6 +67,9 @@ android {
 repositories {
   mavenCentral()
   google()
+  maven {
+    url "https://repositories.mrf.io/nexus/repository/mvn-marfeel-public/"
+  }
 }
 
 def kotlin_version = getExtOrDefault("kotlinVersion")
@@ -74,4 +77,8 @@ def kotlin_version = getExtOrDefault("kotlinVersion")
 dependencies {
   implementation "com.facebook.react:react-android"
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+  // Marfeel SDK - using views version (for XML-based views)
+  // Use 'com.marfeel.compass:compose:1.16.0' if you need Jetpack Compose support
+  implementation "com.marfeel.compass:views:1.16.0"
 }

@@ -1,26 +1,26 @@
 # react-native-marfeel
 
-React Native Marfeel
+React Native wrapper for Marfeel SDK - Analytics and tracking solution for mobile apps.
 
 ## Installation
-
 
 ```sh
 npm install react-native-marfeel
 ```
 
-
 ## Usage
 
-
 ```js
-import { multiply } from 'react-native-marfeel';
+import Marfeel from 'react-native-marfeel';
 
-// ...
+// Initialize the SDK
+await Marfeel.initialize('YOUR_ACCOUNT_ID');
 
-const result = multiply(3, 7);
+// Track a page
+Marfeel.trackNewPage('https://example.com/article');
 ```
 
+Full documentation coming soon.
 
 ## Contributing
 
