@@ -1,5 +1,7 @@
 package com.marfeel
 
+import android.os.Handler
+import android.os.Looper
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.Promise
 import com.facebook.react.bridge.ReadableArray
@@ -18,6 +20,7 @@ class MarfeelModule(reactContext: ReactApplicationContext) :
 
   private var tracker: CompassTracking? = null
   private var multimediaTracker: MultimediaTracking? = null
+  private val mainHandler = Handler(Looper.getMainLooper())
 
   override fun getName(): String {
     return NAME
@@ -26,21 +29,26 @@ class MarfeelModule(reactContext: ReactApplicationContext) :
   // Initialization
   override fun initialize(accountId: String, pageTechnology: Double?) {
     val context = reactApplicationContext
-    tracker = if (pageTechnology != null) {
+    if (pageTechnology != null) {
       CompassTracking.initialize(context, accountId, pageTechnology.toInt())
     } else {
       CompassTracking.initialize(context, accountId)
     }
+    tracker = CompassTracking.getInstance()
     multimediaTracker = MultimediaTracking.getInstance()
   }
 
   // Page & Screen Tracking
   override fun trackNewPage(url: String, recirculationSource: String?) {
-    tracker?.trackNewPage(url, recirculationSource)
+    mainHandler.post {
+      tracker?.trackNewPage(url, recirculationSource)
+    }
   }
 
   override fun trackScreen(screen: String, recirculationSource: String?) {
-    tracker?.trackScreen(screen, recirculationSource)
+    mainHandler.post {
+      tracker?.trackScreen(screen, recirculationSource)
+    }
   }
 
   override fun stopTracking() {
