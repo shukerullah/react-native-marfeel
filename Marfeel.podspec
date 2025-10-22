@@ -16,6 +16,8 @@ Pod::Spec.new do |s|
   s.source_files = "ios/**/*.{h,m,mm,cpp}"
   s.private_header_files = "ios/**/*.h"
 
+  # Marfeel iOS SDK dependency
+  s.dependency "MarfeelSDK-iOS", "~> 2.18.3"
 
   install_modules_dependencies(s)
 end
