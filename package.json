@@ -1,6 +1,6 @@
 {
   "name": "react-native-marfeel",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "React Native wrapper for Marfeel SDK - Analytics and tracking for mobile apps",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
