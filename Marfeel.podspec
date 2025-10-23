@@ -13,8 +13,7 @@ Pod::Spec.new do |s|
   s.platforms    = { :ios => min_ios_version_supported }
   s.source       = { :git => "https://github.com/shukerullah/react-native-marfeel.git", :tag => "#{s.version}" }
 
-  s.source_files = "ios/**/*.{h,m,mm,cpp,swift}"
-  s.private_header_files = "ios/**/*.h"
+  s.source_files = "ios/**/*.{h,m,swift}"
 
   # Marfeel iOS SDK dependency
   s.dependency "MarfeelSDK-iOS", "~> 2.18.3"
