@@ -19,16 +19,12 @@ class Marfeel: NSObject {
     }
 
     @objc func trackNewPage(_ url: String, recirculationSource: String?) {
-        DispatchQueue.main.async {
-            if let nsUrl = URL(string: url) {
-                CompassTracker.shared.trackNewPage(url: nsUrl, rs: recirculationSource)
-            }
+        if let nsUrl = URL(string: url) {
+            CompassTracker.shared.trackNewPage(url: nsUrl, rs: recirculationSource)
         }
     }
 
     @objc func trackScreen(_ screen: String, recirculationSource: String?) {
-        DispatchQueue.main.async {
-            CompassTracker.shared.trackScreen(name: screen, rs: recirculationSource)
-        }
+        CompassTracker.shared.trackScreen(screen, rs: recirculationSource)
     }
 }
