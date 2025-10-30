@@ -80,5 +80,5 @@ dependencies {
 
   // Marfeel SDK - using views version (for XML-based views)
   // Use 'com.marfeel.compass:compose:1.16.0' if you need Jetpack Compose support
-  implementation "com.marfeel.compass:views:1.16.0"
+  implementation "com.marfeel.compass:views:1.16.2"
 }
